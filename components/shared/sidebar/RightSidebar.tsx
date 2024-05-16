@@ -4,12 +4,12 @@ import React from "react";
 import RenderTags from "../RenderTags";
 
 type questionsTYpe = {
-  _id: number;
+  _id: string;
   question: string;
 };
 
 type popularTagsType = {
-  _id: number;
+  _id: string;
   tag: string;
   totalQuestions: number;
   showCount: boolean;
@@ -18,55 +18,55 @@ type popularTagsType = {
 const RightSidebar = () => {
   const topQuestions: questionsTYpe[] = [
     {
-      _id: 1,
+      _id: "1",
       question:
         "Best practices for data fetching in a Next.js application with Server-Side Rendering (SSR)?",
     },
     {
-      _id: 2,
+      _id: "2",
       question: "Is it only me or the font is bolder than necessary?",
     },
     {
-      _id: 3,
+      _id: "3",
       question: "Redux Toolkit Not Updating State as Expected",
     },
     {
-      _id: 4,
+      _id: "4",
       question: "Can I get the course for free?",
     },
     {
-      _id: 5,
+      _id: "5",
       question: "Async/Await Function Not Handling Errors Properly",
     },
   ];
 
   const popularTags: popularTagsType[] = [
     {
-      _id: 1,
+      _id: "1",
       tag: "NEXTJS",
       totalQuestions: 5,
       showCount: true,
     },
     {
-      _id: 2,
+      _id: "2",
       tag: "TYPESCRIPT",
       totalQuestions: 4,
       showCount: true,
     },
     {
-      _id: 3,
+      _id: "3",
       tag: "NODEJS",
       totalQuestions: 2,
       showCount: true,
     },
     {
-      _id: 4,
+      _id: "4",
       tag: "REACT",
       totalQuestions: 4,
       showCount: true,
     },
     {
-      _id: 5,
+      _id: "5",
       tag: "PRISMA",
       totalQuestions: 3,
       showCount: true,
@@ -84,7 +84,7 @@ const RightSidebar = () => {
           {topQuestions.map((question) => {
             return (
               <Link
-                href={`${question._id}`}
+                href={`question/${question._id}`}
                 key={question._id}
                 className="flex cursor-pointer items-center justify-between gap-7"
               >
